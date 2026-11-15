@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ajuda - Heurísticas de usabilidade, diretrizes e padrões aplicados no Portfólio de Caio Alves">
+    <title>Ajuda | Caio Alves</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Ajustes locais da página Ajuda */
+        /* Accordion em coluna única: o conteúdo de cada heurística é longo demais para 3 colunas */
+        .heuristicas { grid-template-columns: 1fr; align-items: start; max-width: 900px; margin: 0 auto; }
+        .heuristica-subtitulo {
+            font-family: var(--fonte-titulo);
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--cor-texto);
+            margin: 0 0 var(--esp-sm);
+        }
+        .heuristica-lista {
+            font-size: 0.9375rem;
+            color: var(--cor-texto-claro);
+            line-height: 1.7;
+            margin: 0 0 var(--esp-md);
+            padding-left: var(--esp-lg);
+            list-style: disc;
+        }
+        .heuristica-lista li { margin-bottom: var(--esp-sm); }
+        .heuristica-lista strong { color: var(--cor-texto); }
+        .heuristica-lista a, .heuristica-desc a, .heuristica-exemplo a { font-weight: 600; text-decoration: underline; }
+        .heuristica-lista code, .heuristica-desc code {
+            font-family: var(--fonte-mono);
+            font-size: 0.8125rem;
+            background: var(--cor-bg-alt);
+            padding: 1px 6px;
+            border-radius: var(--raio);
+        }
+        .padroes-lista { max-width: 900px; margin: 0 auto; }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header class="header" role="banner">
+        <div class="header-inner">
+            <a href="index.html" class="logo" aria-label="Caio Alves - Início">
+                CAIO<span>ALVES</span>
+            </a>
+
+            <nav class="nav" role="navigation" aria-label="Navegação principal">
+                <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Alternar menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="nav-overlay" aria-hidden="true"></div>
+                <ul class="nav-list" id="nav-list" role="list">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li><a href="curriculo.html" class="nav-link">Currículo</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                    <li><a href="ajuda.html" class="nav-link" aria-current="page">Ajuda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" role="main">
+        <!-- HERO DA PÁGINA AJUDA -->
+        <section class="section hero" aria-labelledby="ajuda-hero-title">
+            <div class="container hero-inner">
+                <div class="hero-texto">
+                    <span class="hero-greeting">Precisa de ajuda?</span>
+                    <h1 id="ajuda-hero-title" class="hero-title">Central de Ajuda</h1>
+                    <p class="hero-desc">Esta página descreve cada <strong>heurística de usabilidade</strong>, diretriz e padrão utilizado no projeto e indica <strong>onde</strong> ele pode ser encontrado no portfólio. Se não encontrar o que procura, <a href="contato.html">entre em contato</a>.</p>
+                </div>
+                <div class="hero-img" aria-hidden="true">
+                    <img src="assents/imagem_de_fundo.jpg" alt="" class="card-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- AS 10 HEURÍSTICAS DE NIELSEN -->
+        <section class="section" aria-labelledby="heuristicas-title">
+            <div class="container">
+                <h2 id="heuristicas-title" class="section-title">As 10 Heurísticas de Usabilidade de Nielsen</h2>
+                <p style="max-width: 800px; margin-bottom: var(--esp-xl, 2rem); color: var(--cor-texto-claro);">Clique em cada heurística para ver a descrição, como ela foi aplicada e onde encontrá-la no projeto.</p>
+
+                <div class="heuristicas" role="list" aria-label="Heurísticas de usabilidade de Nielsen aplicadas no portfólio">
+
+                    <!-- 1 -->
+                    <article class="heuristica" aria-expanded="false" role="listitem">
+                        <header class="heuristica-header" tabindex="0" role="button">
+                            <span class="heuristica-numero">01</span>
+                            <h3 class="heuristica-titulo">Visibilidade do status do sistema</h3>
+                            <svg class="heuristica-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </header>
+                        <div class="heuristica-conteudo">
+                            <p class="heuristica-local">Menu • Formulário • Accordion • Foco</p>
+                            <p class="heuristica-desc">O sistema deve manter o usuário informado sobre o que está acontecendo, por meio de feedback adequado e no tempo certo. No portfólio, o visitante sempre sabe em qual página está e recebe retorno imediato de suas ações.</p>
+                            <p class="heuristica-subtitulo">Onde encontrar</p>
+                            <ul class="heuristica-lista">
+                                <li><strong>Menu principal (todas as páginas):</strong> o link da página atual é destacado com <code>aria-current="page"</code>. Veja o item "Ajuda" no menu desta página.</li>
+                                <li><strong>Formulário de <a href="contato.html">Contato</a>:</strong> validação em tempo real, mensagem de sucesso (caixa verde) ou de erro após o envio.</li>
+                                <li><strong>Esta página:</strong> o ícone de seta gira e o painel abre ao clicar em cada heurística.</li>
+                                <li><strong>Foco visível (todas as páginas):</strong> contorno na cor terracota em links, botões e campos quando navegados pelo teclado, e realce nos campos do formulário ao digitar.</li>
+                            </ul>
+                            <div class="heuristica-exemplo">
+                                <strong>Dica:</strong> Abra o <a href="contato.html">formulário de contato</a> e preencha um campo de forma incorreta para ver o retorno imediato.
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 2 -->
+                    <article class="heuristica" aria-expanded="false" role="listitem">
+                        <header class="heuristica-header" tabindex="0" role="button">
+                            <span class="heuristica-numero">02</span>
+                            <h3 class="heuristica-titulo">Correspondência entre o sistema e o mundo real</h3>
+                            <svg class="heuristica-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </header>
+                        <div class="heuristica-conteudo">
+                            <p class="heuristica-local">Linguagem • Ícones • Rótulos</p>
+                            <p class="heuristica-desc">O sistema deve falar a linguagem do usuário, com palavras, frases e conceitos familiares, e não com termos técnicos internos. O portfólio usa português do Brasil (<code>lang="pt-BR"</code>), rótulos simples e ícones reconhecíveis.</p>
+                            <p class="heuristica-subtitulo">Onde encontrar</p>
+                            <ul class="heuristica-lista">
+                                <li><strong>Menu e rodapé (todas as páginas):</strong> rótulos claros como "Início", "Sobre", "Currículo", "Contato" e "Ajuda".</li>
+                                <li><strong>Canais diretos em <a href="contato.html">Contato</a>:</strong> ícones familiares de e-mail, GitHub e LinkedIn acompanhados de texto.</li>
+                                <li><strong><a href="curriculo.html">Currículo</a>:</strong> estrutura que segue o modelo conhecido de currículo (Formação, Experiência, Certificações e Idiomas).</li>
+                                <li><strong>Botões de ação:</strong> textos naturais como "Conheça minha história", "Entre em contato" e "Falar comigo".</li>
+                            </ul>
+                            <div class="heuristica-exemplo">
+                                <strong>Dica:</strong> Visite o <a href="curriculo.html">Currículo</a> para ver a organização em seções conhecidas.
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 3 -->
+                    <article class="heuristica" aria-expanded="false" role="listitem">
+                        <header class="heuristica-header" tabindex="0" role="button">
+                            <span class="heuristica-numero">03</span>
+                            <h3 class="heuristica-titulo">Controle e liberdade do usuário</h3>
+                            <svg class="heuristica-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </header>
+                        <div class="heuristica-conteudo">
+                            <p class="heuristica-local">Logo • Menu mobile • Links externos • Accordion</p>
+                            <p class="heuristica-desc">Os usuários precisam de uma "saída de emergência" clara para sair de situações indesejadas. O visitante pode voltar ao início, fechar painéis e navegar livremente sem ficar preso em nenhuma tela.</p>
+                            <p class="heuristica-subtitulo">Onde encontrar</p>
+                            <ul class="heuristica-lista">
+                                <li><strong>Logo "CAIO ALVES" (cabeçalho e rodapé):</strong> sempre leva de volta à página <a href="index.html">Início</a>.</li>
+                                <li><strong>Menu hambúrguer (telas menores):</strong> abre e fecha o painel lateral a qualquer momento.</li>
+                                <li><strong>Links externos (GitHub e LinkedIn):</strong> abrem em nova aba, mantendo o portfólio aberto.</li>
+                                <li><strong>Esta página:</strong> cada heurística pode ser aberta e fechada livremente.</li>
+                            </ul>
+                            <div class="heuristica-exemplo">
+                                <strong>Dica:</strong> Em qualquer página, clique no logo para voltar ao <a href="index.html">Início</a>.
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 4 -->
+                    <article class="heuristica" aria-expanded="false" role="listitem">
+                        <header class="heuristica-header" tabindex="0" role="button">
+                            <span class="heuristica-numero">04</span>
+                            <h3 class="heuristica-titulo">Consistência e padrões</h3>
+                            <svg class="heuristica-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </header>
+                        <div class="heuristica-conteudo">
+                            <p class="heuristica-local">Header • Menu • Rodapé • Design system</p>
+                            <p class="heuristica-desc">Usuários não devem ter de se perguntar se palavras, situações ou ações diferentes significam a mesma coisa. Todas as páginas compartilham a mesma estrutura, o mesmo estilo visual e as convenções comuns da web.</p>
+                            <p class="heuristica-subtitulo">Onde encontrar</p>
+                            <ul class="heuristica-lista">
+                                <li><strong>Cabeçalho, menu e rodapé idênticos</strong> em <a href="index.html">Início</a>, <a href="sobre.html">Sobre</a>, <a href="curriculo.html">Currículo</a>, <a href="contato.html">Contato</a> e <a href="ajuda.html">Ajuda</a>.</li>
+                                <li><strong>Design system em CSS:</strong> variáveis (<code>--cor-*</code>, <code>--esp-*</code>, <code>--fonte-*</code>) garantem cores, espaçamentos e fontes uniformes.</li>
+                                <li><strong>Componentes repetidos:</strong> cards de projetos, botões primários e títulos de seção com o mesmo padrão visual.</li>
+                                <li><strong>Convenções da web:</strong> logo leva ao início, menu hambúrguer no mobile e links <code>mailto:</code> para e-mail.</li>
+                            </ul>
+                            <div class="heuristica-exemplo">
+                                <strong>Dica:</strong> Navegue entre as páginas e repare que cabeçalho, menu e rodapé permanecem iguais.
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 5 -->
+                    <article class="heuristica" aria-expanded="false" role="listitem">
+                        <header class="heuristica-header" tabindex="0" role="button">
+                            <span class="heuristica-numero">05</span>
+                            <h3 class="heuristica-titulo">Prevenção de erros</h3>
+                            <svg class="heuristica-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </header>
+                        <div class="heuristica-conteudo">
+                            <p class="heuristica-local">Formulário de Contato • Validação em tempo real</p>
+                            <p class="heuristica-desc">É melhor evitar que o problema ocorra do que exibir uma mensagem de erro depois. O formulário orienta o preenchimento enquanto o usuário digita, antes do envio.</p>
+                            <p class="heuristica-subtitulo">Onde encontrar</p>
+                            <ul class="heuristica-lista">
+                                <li><strong>Formulário em <a href="contato.html">Contato</a>:</strong> validação em tempo real dos campos nome, e-mail, assunto e mensagem.</li>
+                                <li><strong>Rótulos e campos obrigatórios:</strong> cada campo tem <code>label</code> e os obrigatórios são marcados com asterisco vermelho (<code>*</code>).</li>
+                                <li><strong>Navegação:</strong> links com destino claro e botões com texto descritivo reduzem cliques acidentais.</li>
+                            </ul>
+                            <div class="heuristica-exemplo">
+                                <strong>Dica:</strong> Experimente digitar um e-mail incompleto no <a href="contato.html">formulário</a> para ver a validação agir.
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 6 -->
+                    <article class="heuristica" aria-expanded="false" role="listitem">
+                        <header class="heuristica-header" tabindex="0" role="button">
+                            <span class="heuristica-numero">06</span>
+                            <h3 class="heuristica-titulo">Reconhecimento em vez de memorização</h3>
+                            <svg class="heuristica-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </header>
+                        <div class="heuristica-conteudo">
+                            <p class="heuristica-local">Header fixo • Rodapé • Botões de ação</p>
+                            <p class="heuristica-desc">Minimize a carga de memória do usuário tornando elementos, ações e opções visíveis. O visitante nunca precisa lembrar onde algo está, pois as opções de navegação estão sempre à vista.</p>
+                            <p class="heuristica-subtitulo">Onde encontrar</p>
+                            <ul class="heuristica-lista">
+                                <li><strong>Header fixo (todas as páginas):</strong> o menu com todas as seções permanece visível no topo durante a rolagem.</li>
+                                <li><strong>Rodapé (todas as páginas):</strong> repete os links de navegação e os contatos.</li>
+                                <li><strong>Página <a href="index.html">Início</a>:</strong> botões de ação levam direto a <a href="sobre.html">Sobre</a> e <a href="contato.html">Contato</a>.</li>
+                                <li><strong>Ícones acompanhados de texto</strong> nos canais de contato e nas habilidades da página <a href="sobre.html">Sobre</a>.</li>
+                            </ul>
+                            <div class="heuristica-exemplo">
+                                <strong>Dica:</strong> Role qualquer página até o final: o rodapé oferece todos os links novamente.
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 7 -->
+                    <article class="heuristica" aria-expanded="false" role="listitem">
+                        <header class="heuristica-header" tabindex="0" role="button">
+                            <span class="heuristica-numero">07</span>
+                            <h3 class="heuristica-titulo">Flexibilidade e eficiência de uso</h3>
+                            <svg class="heuristica-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </header>
+                        <div class="heuristica-conteudo">
+                            <p class="heuristica-local">Skip link • Teclado • Atalhos • Responsividade</p>
+                            <p class="heuristica-desc">Atalhos e opções flexíveis atendem tanto usuários iniciantes quanto experientes, agilizando a interação. O portfólio oferece caminhos rápidos e funciona em diferentes dispositivos e formas de uso.</p>
+                            <p class="heuristica-subtitulo">Onde encontrar</p>
+                            <ul class="heuristica-lista">
+                                <li><strong>Link "Pular para o conteúdo principal":</strong> primeiro item focado com a tecla <kbd>Tab</kbd> em todas as páginas.</li>
+                                <li><strong>Navegação 100% por teclado:</strong> menus, formulário e accordions funcionam com Tab, Enter e Espaço.</li>
+                                <li><strong>Atalhos na página <a href="index.html">Início</a>:</strong> botões que levam direto às seções mais relevantes.</li>
+                                <li><strong>Dois caminhos de contato em <a href="contato.html">Contato</a>:</strong> links diretos para conversas rápidas e formulário para propostas formais.</li>
+                                <li><strong>Layout responsivo (mobile-first):</strong> adapta-se a celular, tablet e desktop.</li>
+                            </ul>
+                            <div class="heuristica-exemplo">
+                                <strong>Dica:</strong> Ao carregar qualquer página, pressione <kbd>Tab</kbd> uma vez para ver o link de pular conteúdo.
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 8 -->
+                    <article class="heuristica" aria-expanded="false" role="listitem">
+                        <header class="heuristica-header" tabindex="0" role="button">
+                            <span class="heuristica-numero">08</span>
+                            <h3 class="heuristica-titulo">Estética e design minimalista</h3>
+                            <svg class="heuristica-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </header>
+                        <div class="heuristica-conteudo">
+                            <p class="heuristica-local">Layout limpo • Tipografia • Hierarquia visual</p>
+                            <p class="heuristica-desc">As interfaces não devem conter informação irrelevante ou raramente necessária, pois cada elemento extra compete com o que realmente importa. O projeto prioriza espaços em branco, hierarquia clara e conteúdo organizado em seções.</p>
+                            <p class="heuristica-subtitulo">Onde encontrar</p>
+                            <ul class="heuristica-lista">
+                                <li><strong>Todas as páginas:</strong> conteúdo dividido em seções com título, espaçamento generoso e foco em um objetivo por seção.</li>
+                                <li><strong>Paleta e tipografia enxutas:</strong> cores terrosas com a terracota como destaque, Space Grotesk nos títulos, DM Sans no corpo e JetBrains Mono em trechos de código.</li>
+                                <li><strong>Projetos em cards</strong> (<a href="index.html">Início</a> e <a href="sobre.html">Sobre</a>): imagem, tag, título, descrição e link, sem excesso de informação.</li>
+                                <li><strong>Esta página:</strong> o accordion mantém os detalhes recolhidos até o usuário pedir.</li>
+                            </ul>
+                            <div class="heuristica-exemplo">
+                                <strong>Dica:</strong> Veja os cards de projetos em <a href="sobre.html">Sobre</a> como exemplo de informação objetiva.
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 9 -->
+                    <article class="heuristica" aria-expanded="false" role="listitem">
+                        <header class="heuristica-header" tabindex="0" role="button">
+                            <span class="heuristica-numero">09</span>
+                            <h3 class="heuristica-titulo">Ajudar usuários a reconhecer, diagnosticar e corrigir erros</h3>
+                            <svg class="heuristica-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </header>
+                        <div class="heuristica-conteudo">
+                            <p class="heuristica-local">Formulário de Contato • Feedback de erro</p>
+                            <p class="heuristica-desc">Mensagens de erro devem ser expressas em linguagem simples, indicar com precisão o problema e sugerir uma solução. Quando algo falha no formulário, o usuário vê onde está o problema e o que precisa corrigir.</p>
+                            <p class="heuristica-subtitulo">Onde encontrar</p>
+                            <ul class="heuristica-lista">
+                                <li><strong>Formulário em <a href="contato.html">Contato</a>:</strong> o campo inválido ganha borda vermelha e uma mensagem explicativa aparece logo abaixo dele (<code>aria-invalid</code>), em tempo real.</li>
+                                <li><strong>Retorno do envio:</strong> mensagem de sucesso (verde) ou de erro após tentar enviar.</li>
+                                <li><strong>Alternativa em caso de falha:</strong> e-mail, GitHub e LinkedIn disponíveis como canais diretos na mesma página e no rodapé.</li>
+                            </ul>
+                            <div class="heuristica-exemplo">
+                                <strong>Dica:</strong> Se o envio pelo formulário falhar, escreva direto para o e-mail listado no rodapé.
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 10 -->
+                    <article class="heuristica" aria-expanded="false" role="listitem">
+                        <header class="heuristica-header" tabindex="0" role="button">
+                            <span class="heuristica-numero">10</span>
+                            <h3 class="heuristica-titulo">Ajuda e documentação</h3>
+                            <svg class="heuristica-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </header>
+                        <div class="heuristica-conteudo">
+                            <p class="heuristica-local">Página Ajuda • Menu • Contato</p>
+                            <p class="heuristica-desc">Embora seja melhor que o sistema seja usável sem documentação, pode ser necessário oferecer ajuda de forma fácil de encontrar e focada na tarefa do usuário. Esta própria página é a documentação do projeto.</p>
+                            <p class="heuristica-subtitulo">Onde encontrar</p>
+                            <ul class="heuristica-lista">
+                                <li><strong><a href="ajuda.html">Ajuda</a> (menu e rodapé de todas as páginas):</strong> acesso direto a esta página em qualquer ponto do site.</li>
+                                <li><strong>Esta página:</strong> descreve cada heurística, diretriz e padrão usado e onde encontrá-los.</li>
+                                <li><strong>Seção "Não encontrou sua resposta?":</strong> no final desta página, com botão para falar diretamente comigo.</li>
+                                <li><strong><a href="contato.html">Contato</a>:</strong> canal para tirar dúvidas que a documentação não resolver.</li>
+                            </ul>
+                            <div class="heuristica-exemplo">
+                                <strong>Dica:</strong> O link "Ajuda" está no menu de todas as páginas, sempre no mesmo lugar.
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- DIRETRIZES E PADRÕES COMPLEMENTARES -->
+        <section class="section section--alt" aria-labelledby="padroes-title">
+            <div class="container">
+                <h2 id="padroes-title" class="section-title">Diretrizes e Padrões Complementares</h2>
+                <ul class="heuristica-lista padroes-lista">
+                    <li><strong>Acessibilidade (WCAG 2.1):</strong> HTML semântico (<code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>article</code>, <code>footer</code>), contraste dentro do nível AA, foco visível, textos alternativos em imagens, <code>label</code> em formulários e atributos ARIA (<code>aria-expanded</code>, <code>aria-controls</code>, <code>aria-current</code>, <code>role</code>). Presente em <strong>todas as páginas</strong>.</li>
+                    <li><strong>Design responsivo mobile-first:</strong> estilos base para celular com media queries em 640px (tablet) e 1024px (desktop). O menu vira hambúrguer abaixo de 1024px. Aplicado em <strong>todas as páginas</strong> (arquivo <code>css/styles.css</code>).</li>
+                    <li><strong>Design system com variáveis CSS:</strong> tokens de cor, espaçamento e fonte reutilizados em todo o projeto (arquivo <code>css/styles.css</code>).</li>
+                    <li><strong>Folha de estilo de impressão:</strong> ao imprimir, cabeçalho, rodapé, botões e formulário são ocultados para priorizar o conteúdo (<code>@media print</code> em <code>css/styles.css</code>).</li>
+                    <li><strong>Padrões de tecnologia:</strong> HTML5, CSS3 (Grid, Flexbox, Custom Properties) e JavaScript vanilla ES6+ para menu mobile, validação do formulário e accordion (arquivo <code>js/main.js</code>).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CONTATO RÁPIDO SE NÃO ENCONTROU -->
+        <section class="section" aria-labelledby="nao-encontrou-title">
+            <div class="container">
+                <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                    <h2 id="nao-encontrou-title" class="section-title">Não encontrou sua resposta?</h2>
+                    <p style="font-size: 1.0625rem; color: var(--cor-texto-claro); margin-bottom: var(--esp-xl);">Envie sua dúvida diretamente — respondo em até 24h úteis.</p>
+                    <a href="contato.html" class="btn btn--primario">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        Falar comigo
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">CAIO<span>ALVES</span></a>
+                <p class="footer-desc">Desenvolvedor Full-Stack focado em criar experiências digitais acessíveis, performáticas e funcionais.</p>
+            </div>
+            <nav class="footer-links" aria-label="Links do rodapé">
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="curriculo.html">Currículo</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="ajuda.html">Ajuda</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="mailto:caio.alves.castro007@gmail.com">caio.alves.castro007@gmail.com</a></li>
+                        <li><a href="https://github.com/caiocastro-07" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/caio-alves-507b27373/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Caio Alves. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Accordion das heurísticas
+        (function() {
+            const heuristicas = document.querySelectorAll('.heuristica');
+
+            heuristicas.forEach(heuristica => {
+                const header = heuristica.querySelector('.heuristica-header');
+                const icone = heuristica.querySelector('.heuristica-icone');
+
+                header.addEventListener('click', (e) => {
+                    // Não alternar ao clicar em links dentro do cabeçalho
+                    if (e.target.closest('a')) return;
+
+                    const expanded = heuristica.getAttribute('aria-expanded') === 'true';
+
+                    // Fechar todas as outras (comportamento accordion)
+                    heuristicas.forEach(h => {
+                        if (h !== heuristica) {
+                            h.setAttribute('aria-expanded', 'false');
+                            const hIcone = h.querySelector('.heuristica-icone');
+                            if (hIcone) hIcone.style.transform = 'rotate(0deg)';
+                        }
+                    });
+
+                    // Alternar a atual
+                    heuristica.setAttribute('aria-expanded', !expanded);
+                    if (icone) {
+                        icone.style.transform = expanded ? 'rotate(0deg)' : 'rotate(180deg)';
+                    }
+                });
+
+                // Suporte a teclado
+                header.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        header.click();
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
